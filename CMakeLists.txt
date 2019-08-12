@@ -112,5 +112,9 @@ endif()
 add_subdirectory(extras)
 
 # Install the export file specifying all the targets for RapidCheck
-install(EXPORT rapidcheckConfig DESTINATION share/rapidcheck/cmake)
+install(
+  EXPORT rapidcheckConfig
+  NAMESPACE rapidcheck::
+  DESTINATION share/rapidcheck/cmake
+)
 export(EXPORT rapidcheckConfig FILE rapidcheckConfig.cmake)
